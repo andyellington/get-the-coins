@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"Sound1",
+  "%Name":"coinsound",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.7182766,
+  "duration":0.6833787,
   "exportDir":"",
-  "name":"Sound1",
+  "name":"coinsound",
   "parent":{
-    "name":"boo",
-    "path":"boo.yyp",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"Sound1.wav",
+  "soundFile":"coinsound.wav",
   "volume":1.0,
 }

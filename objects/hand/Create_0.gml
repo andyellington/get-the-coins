@@ -1,1 +1,1 @@
-audio_play_sound(Sound1,1,false)
+audio_play_sound(funtime,1,false)

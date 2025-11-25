@@ -6,6 +6,6 @@ image_index = random(image_number);
 	
 	if(score=10) room_goto(Room2);
 
-	if(score>=20) room_goto(Room3)
+	if(score=20) room_goto(Room3)
 	
-	
+	   audio_play_sound(coinsound,10,false);

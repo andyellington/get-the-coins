@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"door",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"booo","path":"objects/booo/booo.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"flinn","path":"objects/flinn/flinn.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"door",

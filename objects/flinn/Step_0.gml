@@ -5,11 +5,18 @@ var right = keyboard_check(vk_right);
 var jump = keyboard_check_pressed(vk_space);
 
  xdir = (right-left)*ms;
- ydir += grv;
+ 
+ 
+ if not on_ground
+ {
+	 ydir += grv;
+	 
+ }
 
 if on_ground and jump
 {
 	ydir -= jstr;
+	audio_play_sound(up,10,false);
 }
 if not place_meeting(x+xdir,y,wallE)
 { 
@@ -27,6 +34,7 @@ else
 	y += 1;
 }
 ydir = 0;
+audio_play_sound(down,10,false);
 }
 
 
