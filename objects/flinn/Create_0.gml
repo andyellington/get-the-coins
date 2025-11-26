@@ -9,3 +9,5 @@ jstr = 10;
 on_ground = 0
 
 window_set_fullscreen(true)
+
+audio_play_sound(funtime,1,false)
