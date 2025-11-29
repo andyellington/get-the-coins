@@ -2,9 +2,9 @@
 if ydir != 0
 
 {
-	sprite_index = boo_1;
+	sprite_index = flinn_jumping;
 }
 else
 { 
-	sprite_index =boo ;
+	sprite_index =flinn_walk ;
 }

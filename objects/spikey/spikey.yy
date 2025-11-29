@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"door",
+  "%Name":"spikey",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"flinn","path":"objects/flinn/flinn.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"door",
+  "name":"spikey",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"orange_door",
-    "path":"sprites/orange_door/orange_door.yy",
+    "name":"spike",
+    "path":"sprites/spike/spike.yy",
   },
   "spriteMaskId":null,
   "visible":true,
