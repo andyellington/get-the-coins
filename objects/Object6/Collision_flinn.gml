@@ -1,3 +1,3 @@
 room_goto(Room7)
 
-score = 0
+score = 1000

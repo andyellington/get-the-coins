@@ -76,11 +76,11 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"Room_sea","path":"rooms/Room_sea/Room_sea.yy",},},
     {"roomId":{"name":"Room_lava","path":"rooms/Room_lava/Room_lava.yy",},},
-    {"roomId":{"name":"Room_castle","path":"rooms/Room_castle/Room_castle.yy",},},
     {"roomId":{"name":"Room_sand","path":"rooms/Room_sand/Room_sand.yy",},},
+    {"roomId":{"name":"Room_castle","path":"rooms/Room_castle/Room_castle.yy",},},
     {"roomId":{"name":"Room_money","path":"rooms/Room_money/Room_money.yy",},},
-    {"roomId":{"name":"Room_prison","path":"rooms/Room_prison/Room_prison.yy",},},
     {"roomId":{"name":"Room7","path":"rooms/Room7/Room7.yy",},},
+    {"roomId":{"name":"Room_prison","path":"rooms/Room_prison/Room_prison.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
