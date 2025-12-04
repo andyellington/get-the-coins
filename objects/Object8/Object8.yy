@@ -8,8 +8,8 @@
   "name":"Object8",
   "overriddenProperties":[],
   "parent":{
-    "name":"boo",
-    "path":"boo.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite15",
-    "path":"sprites/Sprite15/Sprite15.yy",
+    "name":"duck",
+    "path":"sprites/duck/duck.yy",
   },
   "spriteMaskId":null,
   "visible":true,

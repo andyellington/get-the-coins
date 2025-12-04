@@ -13,6 +13,8 @@ devMultipler = 10
 	if(score=3*devMultipler) room_goto(Room_castle);
 	
 	if(score=15*devMultipler)room_goto(Room_money);
+	
+	if(score=110*devMultipler)room_goto(Rooom8)
 
   // if(score=100*devMultipler)room_goto(room7);
 	
