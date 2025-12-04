@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"Object6",
+  "%Name":"Object7",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"flinn","path":"objects/flinn/flinn.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Object6",
+  "name":"Object7",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite11",
-    "path":"sprites/Sprite11/Sprite11.yy",
+    "name":"Sprite12",
+    "path":"sprites/Sprite12/Sprite12.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,1 +1,3 @@
-room_goto(Room_money);
+score+=10
+
+room_goto_next()
