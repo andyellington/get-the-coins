@@ -1,5 +1,5 @@
 global.play_sound=true;
-
+global.pad_num = 0
 ms = 3;
 
 xdir = 0;

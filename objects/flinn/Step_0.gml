@@ -1,8 +1,7 @@
-var left = keyboard_check(vk_left);
-var right = keyboard_check(vk_right);
+var left = keyboard_check(vk_left) or gamepad_button_check(global.pad_num, gp_padl)
+var right = keyboard_check(vk_right) or gamepad_button_check(global.pad_num, gp_padr)
 
-
-var jump = keyboard_check_pressed(vk_space);
+var jump = keyboard_check_pressed(vk_space) ||gamepad_button_check_pressed(global.pad_num, gp_shoulderrb)
 
  xdir = (right-left)*ms;
  
