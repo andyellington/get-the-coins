@@ -21,7 +21,6 @@ jobs:
       - name: Build HTML5/WASM
         uses: bscotch/igor-build@v1
         with:
-          create-local-settings: true
           yyp-path: ${{ github.workspace }}/boo.yyp
           platform: html5
 
