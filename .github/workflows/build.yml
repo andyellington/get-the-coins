@@ -23,7 +23,7 @@ jobs:
         with:
           yyp-path: ${{ github.workspace }}/boo.yyp
           platform: html5
-          project: ${{ github.workspace }}/boo.yyp
+          user-dir:  ${{ github.workspace }}/out
 
       - name: Upload HTML5 build
         uses: actions/upload-artifact@v4
