@@ -21,7 +21,7 @@ jobs:
       - name: Build HTML5/WASM
         uses: bscotch/igor-build@v1
         with:
-          project: ${{ github.workspace }}/boo.yyp
+          yyp-path: ${{ github.workspace }}/boo.yyp
           target: html5
           output-dir: ${{ github.workspace }}/build/html5
 
