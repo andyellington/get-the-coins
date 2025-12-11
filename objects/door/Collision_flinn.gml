@@ -1,2 +1,2 @@
-room_gotos(Room_sea);
+room_goto(Room_sea);
 score = 0

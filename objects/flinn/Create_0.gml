@@ -10,7 +10,7 @@ jstr = 10;
 
 on_ground = 0
 
-window_set_fullscreen(true)
+
 
 if  (global.play_sound=true) audio_play_sound(funtime,1,false)
 
