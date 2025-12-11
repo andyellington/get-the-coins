@@ -26,7 +26,7 @@ jobs:
           $runtimePath = "${{ steps.igor.outputs.runtime-dir }}"
           $igor = "$runtimePath/bin/igor/windows/x64/Igor.exe"
 
-          & $igor /project "${{ github.workspace }}\boo.yyp" /runtime "$runtimePath" html5 zip
+          & $igor /project "${{ github.workspace }}\boo.yyp" /runtime "$runtimePath" html5 folder
 
       - name: Upload HTML5 build
         uses: actions/upload-artifact@v4
