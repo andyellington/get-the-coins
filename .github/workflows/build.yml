@@ -15,6 +15,7 @@ jobs:
 
       - name: Setup Igor
         uses: bscotch/igor-setup@v3
+        id: igor
         with:
           access-key: ${{ secrets.ACCESS_KEY }} # https://gamemaker.io/en/account/access-keys
           target-yyp:  ${{ github.workspace }}/boo.yyp
@@ -22,8 +23,8 @@ jobs:
         uses: bscotch/igor-build@v1
         with:
           yyp-path: ${{ github.workspace }}/boo.yyp
+          user-dir: ${{ steps.igor.outputs.user-dir }}
           platform: html5
-          user-dir:  ${{ github.workspace }}/out
 
       - name: Upload HTML5 build
         uses: actions/upload-artifact@v4
