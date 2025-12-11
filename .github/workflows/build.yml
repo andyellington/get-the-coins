@@ -17,11 +17,11 @@ jobs:
         uses: bscotch/igor-setup@v3
         with:
           access-key: ${{ secrets.ACCESS_KEY }} # https://gamemaker.io/en/account/access-keys
-
+          target-yyp:  ${{ github.workspace }}/boo.yyp
       - name: Build HTML5/WASM
         uses: bscotch/igor-build@v1
         with:
-          project: ${{ github.workspace }}/project.yyp
+          project: ${{ github.workspace }}/boo.yyp
           target: html5
           output-dir: ${{ github.workspace }}/build/html5
 
