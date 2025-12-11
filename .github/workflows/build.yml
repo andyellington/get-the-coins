@@ -22,6 +22,11 @@ jobs:
           access-key: ${{ secrets.ACCESS_KEY }} # https://gamemaker.io/en/account/access-keys
           target-yyp:  ${{ github.workspace }}/boo.yyp
           runtime-version: ${{ env.RUNTIME_VERSION }}
+      - name: Debug Igor install
+        shell: pwsh
+        run: |
+          Write-Host "Listing hostedtoolcache:"
+          Get-ChildItem -Recurse "C:\hostedtoolcache\windows\igor" -ErrorAction SilentlyContinue
 
       - name: Build HTML5/WASM
         shell: pwsh
