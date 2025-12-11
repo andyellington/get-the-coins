@@ -1,0 +1,67 @@
+name: Build HTML5 + Publish Docker
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-gamemaker:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Igor
+        id: igor
+        uses: bscotch/igor-setup@v3
+        with:
+          access-key: ${{ secrets.ACCESS_KEY }} # https://gamemaker.io/en/account/access-keys
+          target-yyp:  ${{ github.workspace }}/boo.yyp
+
+      - name: Build HTML5/WASM
+        shell: pwsh
+        run: |
+          $runtimePath = "${{ steps.igor.outputs.runtime-dir }}"
+          $igor = Join-Path $runtimePath "Igor.exe"
+
+          & $igor `
+            /project="${{ github.workspace }}\project.yyp" `
+            /runtime="$runtimePath" `
+            /target=html5 `
+            /output="${{ github.workspace }}\build\html5"
+
+      - name: Upload HTML5 build
+        uses: actions/upload-artifact@v4
+        with:
+          name: html5-build
+          path: build/html5
+
+  docker-image:
+    runs-on: ubuntu-latest
+    needs: build-gamemaker
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download HTML5 build
+        uses: actions/download-artifact@v4
+        with:
+          name: html5-build
+          path: build/html5
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/get-the-coins:latest
