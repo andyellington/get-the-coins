@@ -1,61 +1,41 @@
-name: Build HTML5 + Publish Docker
-
+name: Continuous Integration for Windows export
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
+  # push: #Uncomment this line to run the workflow on push
+  workflow_dispatch: #This line allows you to run the workflow manually from the GitHub Actions page
+  workflow_call: #This line allows you to run the workflow from another workflow
 jobs:
-  build-gamemaker:
-    runs-on: windows-latest
-
+  build:
+    runs-on: windows-2022
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Igor
+      # Check out the repository with the GameMaker project
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      # This step finds the yyp file in the repository and saves the path to an output
+      - id: find_yyp
+        name: Find the yyp file
+        run: |
+          $yyp = Get-ChildItem -Path ${{ github.workspace }} -Recurse -Filter *.yyp
+          Write-Output "YYP file found at: $yyp"
+          "yyp-path=$yyp" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+      # This step sets up the GameMaker build CLI tool Igor https://github.com/bscotch/igor-setup
+      - name: use Igor Setup
         uses: bscotch/igor-setup@v1
+        id: igor
         with:
-          runtime-version: 2024.2.0.132
-
-      - name: Build HTML5/WASM
+          target-yyp: ${{ steps.find_yyp.outputs.yyp-path }}
+          access-key: ${{ secrets.ACCESS_KEY }} # 📝 To generate your Access Key, check out the Access Key section of the GameMaker Manual's Building via Command Line page: https://manual.gamemaker.io/monthly/en/#t=Settings%2FBuilding_via_Command_Line.htm
+      # This step uses Igor to build the GameMaker project https://github.com/bscotch/igor-build
+      - name: use Igor build
         uses: bscotch/igor-build@v1
+        id: build
         with:
-          project: ${{ github.workspace }}/project.yyp
-          target: html5
-          access-key: ${{ secrets.ACCESS_KEY }} # https://gamemaker.io/en/account/access-keys
-          output-dir: ${{ github.workspace }}/build/html5
-
-      - name: Upload HTML5 build
+          yyp-path: ${{ steps.find_yyp.outputs.yyp-path }}
+          user-dir: ${{ steps.igor.outputs.user-dir }}
+      # This step uploads the build to the artifacts, so you can download it from the GitHub Actions page or use it in another workflow
+      - name: upload-build
         uses: actions/upload-artifact@v4
         with:
-          name: html5-build
-          path: build/html5
-
-  docker-image:
-    runs-on: ubuntu-latest
-    needs: build-gamemaker
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download HTML5 build
-        uses: actions/download-artifact@v4
-        with:
-          name: html5-build
-          path: build/html5
-
-      - name: Log in to GHCR
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ github.repository_owner }}/your-game:latest
+          name: igor-build-windows
+          path: ${{ steps.build.outputs.out-dir }}
+          retention-days: 1 # Longer retention days can incur additional charges. See https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
