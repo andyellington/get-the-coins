@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  RUNTIME_VERSION: "2024.2.0.132"
+  RUNTIME_VERSION: "2024.14.1.253"
 
 jobs:
   build-gamemaker:
