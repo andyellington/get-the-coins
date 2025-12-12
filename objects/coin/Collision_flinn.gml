@@ -14,8 +14,10 @@ devMultipler = 10
 	
 	if(score=15*devMultipler)room_goto(Room_money);
 	
-	if(score=110*devMultipler)room_goto(Rooom8)
-
+	if(score=110*devMultipler)room_goto(Room8);
+	
+	
+	
   // if(score=100*devMultipler)room_goto(room7);
 	
 	if (global.play_sound=true)   audio_play_sound(coinsound,10,false);
