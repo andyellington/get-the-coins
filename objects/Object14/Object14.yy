@@ -1,14 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"spikey",
+  "%Name":"Object14",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"flinn","path":"objects/flinn/flinn.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Object15","path":"objects/Object15/Object15.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"spikey",
+  "name":"Object14",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -33,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spike",
-    "path":"sprites/spike/spike.yy",
+    "name":"Sprite21",
+    "path":"sprites/Sprite21/Sprite21.yy",
   },
   "spriteMaskId":null,
   "visible":true,
